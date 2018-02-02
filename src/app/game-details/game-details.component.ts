@@ -31,4 +31,7 @@ export class GameDetailsComponent implements OnInit {
       this.game.screenshots[0].url || ''; 
   }
 
+  addReview(userId: string, gameId: string) {
+     this.igdbService.postReview(userId, gameId);
+  }
 }

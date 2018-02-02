@@ -11,6 +11,18 @@
     <button mat-button>LIKE</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
+  <mat-card-actions>    
+    <input matInput placeholder="Saisir votre identifiant..."
+        #userId/>
+    <input type="submit" value="J'y ai joué !" (click)="addReview(userId.value , game.id)"/> 
+  </mat-card-actions>
+  <mat-card-actions>
+    <input matInput placeholder="Saisir votre identifiant..."
+        #userIdBis/>
+    <input matInput placeholder="Saisir une note entre 0 et 10 ..."
+        #note/>
+    <input type="submit" value="Noter le jeu !" (click)="addReviewNote(userIdBis.value , game.id, note.value)"/> 
+  </mat-card-actions>
 </mat-card>
 
 </div>

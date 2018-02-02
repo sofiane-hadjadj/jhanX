@@ -34,4 +34,19 @@ export class IgdbService {
     const url = `${this.baseUrl}/game/${id}`;
     return this.http.get<Game>(url,httpOptions);
   }
+
+  postReview(userId: string, gameId: string) {
+    const url = `${this.baseUrl}/users/${userId}/games/${gameId}/review`;
+    const req =  
+    this.http.post(url,httpOptions)
+    .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log("Error occured");
+        }
+      );
+  }
 }
+  //  const url = `${this.baseUrl}/users/${userId}/games/${gameId}/review`;
